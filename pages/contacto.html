@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InByte | Contacto y Asistencia</title>
+  <meta name="description" content="Ponte en contacto con nuestro equipo técnico. Soluciones informáticas y soporte para empresas.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12385a">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://inbyte.es/pages/contacto.html">
+  <link rel="icon" type="image/png" href="../image/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InByte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Contacto y Asistencia">
+  <meta property="og:description" content="Contacta con InByte para solicitar presupuesto o soporte técnico.">
+  <meta property="og:url" content="https://inbyte.es/pages/contacto.html">
+  <meta property="og:image" content="https://inbyte.es/image/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contacto y Asistencia">
+  <meta name="twitter:description" content="Formulario de contacto y datos de asistencia técnica.">
+  <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* Estilos adaptados al estándar de la web */
+    .contacto-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    .contacto-info {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .info-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(18, 56, 90, 0.04);
+      transition: all 0.2s ease;
+    }
+    .info-box:hover {
+      border-color: #00a8e8;
+      box-shadow: 0 8px 24px rgba(18, 56, 90, 0.08);
+    }
+    .info-box h3 {
+      font-size: 1.15rem;
+      color: #12385a;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .info-box p, .info-box a {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      text-decoration: none;
+      margin: 4px 0;
+    }
+    .info-box a:hover {
+      color: #00a8e8;
+    }
+
+    /* Formulario */
+    .contact-form {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 4px 20px rgba(18, 56, 90, 0.04);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #12385a;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      background: #f8fafc;
+      color: #12385a;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      box-sizing: border-box;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #00a8e8;
+      background: #ffffff;
+    }
+    .form-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .form-checkbox input {
+      margin-top: 3px;
+    }
+    .form-checkbox label {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.4;
+    }
+    .form-checkbox a {
+      color: #12385a;
+      text-decoration: underline;
+    }
+
+    /* Botones */
+    .btn-submit-form {
+      width: 100%;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #ffffff;
+      background: #00a8e8;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .btn-submit-form:hover {
+      background: #008cc3;
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #12385a;
+      color: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: none;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cookie-content p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+    .cookie-content a {
+      color: #00a8e8;
+      text-decoration: underline;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept {
+      background: #00a8e8;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-cookie-reject {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .contacto-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .contact-form {
+        padding: 24px 18px;
+      }
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cookie-buttons {
+        width: 100%;
+      }
+      .cookie-buttons button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="nav">
+      <a href="../index.html" class="brand" aria-label="Ir al inicio">
+        <img class="icon" src="../image/icon.png" alt="Inbyte icono">
+        <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+      </a>
+      <nav class="navlinks">
+        <a href="planes.html">Planes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="blog.html">Blog</a>
+        <a href="nosotros.html">Quiénes somos</a>
+      </nav>
+      <a class="btn btn-primary" href="contacto.html">Contactar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 20px; text-align: left;">
+      <div class="wrap" style="text-align: left; margin: 0 auto; max-width: 1200px;">
+        <p class="eyebrow">Atención Personalizada</p>
+        <h1 style="text-align: left;">Habla con un <span class="accent">técnico especializado</span></h1>
+        <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
+          Resuelve tus dudas sobre mantenimiento informático, solicita un análisis para tu empresa o pide presupuesto personalizado sin compromiso.
+        </p>
+
+        <div class="contacto-layout">
+          <div class="contacto-info">
+            <div class="info-box">
+              <h3>Atención Directa</h3>
+              <p>Email: <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a></p>
+              <p>Teléfono: <a href="tel:+34634317344">+34 634 317 344</a></p>
+              <p>Teléfono secundario: <a href="tel:+34613638697">+34 613 638 697</a></p>
+            </div>
+
+            <div class="info-box">
+              <h3>Horario de Atención</h3>
+              <p>Lunes a Viernes</p>
+              <p><strong>9:00 h – 18:00 h</strong></p>
+            </div>
+
+            <div class="info-box">
+              <h3>Ubicación Base</h3>
+              <p>Región de Murcia, España</p>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="6471266f-d6d1-44f9-8b00-eb9d186c09cc">
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana Martínez">
+              </div>
+
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Ej. Mi Empresa S.L.">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" required placeholder="nombre@empresa.com">
+              </div>
+
+              <div class="form-group">
+                <label for="telefono">Teléfono de contacto</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+              </div>
+
+              <div class="form-group">
+                <label for="asunto">Motivo de consulta</label>
+                <select id="asunto" name="asunto">
+                  <option value="Información sobre planes mensuales">Información sobre planes mensuales</option>
+                  <option value="Soporte o intervención puntual">Soporte o intervención puntual</option>
+                  <option value="Consulta sobre cobertura / desplazamiento">Consulta sobre cobertura / desplazamiento</option>
+                  <option value="Otro motivo">Otro motivo</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="mensaje">Mensaje *</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuéntanos qué necesitas..."></textarea>
+              </div>
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="privacidad" name="privacidad" required>
+                <label for="privacidad">He leído y acepto la <a href="privacidad.html" target="_blank">Política de Privacidad</a>.</label>
+              </div>
+
+              <button type="submit" class="btn-submit-form">Enviar mensaje</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img class="icon" src="../image/icon.png" alt="Inbyte">
+          <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+        </div>
+        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="servicios.html">Servicios</a>
+        <a href="planes.html">Planes</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="nosotros.html">Quienes somos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="avisolegal.html">Aviso legal</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
+        <span class="footer-text">L-V · 9:00–18:00h</span>
+        <span class="footer-text">+34 634 317 344</span>
+        <span class="footer-text">+34 613 638 697</span>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (!cookieConsent) {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

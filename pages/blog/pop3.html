@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>InByte | ¿Qué es POP3 y para qué se usa?</title>
+  <meta name="description" content="Descubre qué es el protocolo POP3, cómo funciona para gestionar tus correos electrónicos, sus diferencias con IMAP y cuándo es conveniente utilizarlo en tu empresa.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12385a">
+  <meta name="color-scheme" content="light">
+
+  <link rel="canonical" href="https://inbyte.es/pages/blog/que-es-pop3-y-para-que-se-usa.html">
+  <link rel="icon" type="image/png" href="../../image/favicon.ico">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="InByte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Qué es POP3 y para qué se usa?">
+  <meta property="og:description" content="Aprende qué es el protocolo POP3, sus ventajas, inconvenientes y en qué casos sigue siendo la mejor opción para la gestión de correo electrónico.">
+  <meta property="og:url" content="https://inbyte.es/pages/blog/que-es-pop3-y-para-que-se-usa.html">
+  <meta property="og:image" content="../../image/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="¿Qué es POP3 y para qué se usa?">
+  <meta name="twitter:description" content="Aprende qué es el protocolo POP3, sus ventajas, inconvenientes y en qué casos sigue siendo la mejor opción para la gestión de correo electrónico.">
+  <meta name="twitter:image" content="../../image/icon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles.css">
+
+  <style>
+    .article-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #00a8e8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .article-header {
+      margin-bottom: 32px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 24px;
+    }
+
+    .blog-tag {
+      display: inline-block;
+      background: #f0f9ff;
+      color: #00a8e8;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: #12385a;
+      line-height: 1.25;
+      margin: 12px 0 16px;
+      font-weight: 700;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .article-featured-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 32px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .article-body {
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+      color: #12385a;
+      margin: 36px 0 16px;
+      font-weight: 700;
+    }
+
+    .article-body h3 {
+      font-size: 1.2rem;
+      color: #12385a;
+      margin: 24px 0 12px;
+      font-weight: 600;
+    }
+
+    .article-body p {
+      margin-bottom: 20px;
+    }
+
+    .article-body ul, .article-body ol {
+      margin: 0 0 24px 20px;
+      padding: 0;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+    }
+
+    /* Destacados / Cajas de aviso */
+    .info-callout {
+      background: #f0f9ff;
+      border-left: 4px solid #00a8e8;
+      border-radius: 0 8px 8px 0;
+      padding: 20px;
+      margin: 28px 0;
+    }
+
+    .info-callout p {
+      margin: 0;
+      color: #0369a1;
+      font-size: 0.98rem;
+    }
+
+    /* Banner CTA final del artículo */
+    .article-cta {
+      background: linear-gradient(135deg, #12385a 0%, #1e4d7b 100%);
+      border-radius: 16px;
+      padding: 32px;
+      color: #ffffff;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .article-cta h3 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .article-cta p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #12385a;
+      color: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: none;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cookie-content p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+    .cookie-content a {
+      color: #00a8e8;
+      text-decoration: underline;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept {
+      background: #00a8e8;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-cookie-reject {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    header {
+      position: relative !important;
+      top: auto !important;
+    }
+
+    @media (max-width: 768px) {
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cookie-buttons {
+        width: 100%;
+      }
+      .cookie-buttons button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="nav">
+      <a href="../../index.html" class="brand" aria-label="Ir al inicio">
+        <img class="icon" src="../../image/icon.png" alt="InByte icono">
+        <img class="text" src="../../image/text.png" alt="InByte Soluciones Tecnológicas">
+      </a>
+      <nav class="navlinks">
+        <a href="../planes.html">Planes</a>
+        <a href="../servicios.html">Servicios</a>
+        <a href="../cobertura.html">Cobertura</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../nosotros.html">Quiénes somos</a>
+      </nav>
+      <a class="btn btn-primary" href="../contacto.html">Contactar</a>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-wrapper">
+      <a href="../blog.html" class="back-link">&larr; Volver al Blog</a>
+
+      <header class="article-header">
+        <span class="blog-tag">Soporte y Configuración IT</span>
+        
+        <h1 class="article-title">¿Qué es POP3 y para qué se usa en el correo electrónico?</h1>
+        
+        <div class="article-meta">
+          <span>InByte Soporte IT</span>
+          <span>&bull;</span>
+          <span>Redacción InByte</span>
+          <span>&bull;</span>
+          <span>5 min de lectura</span>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <p>
+          A la hora de configurar una cuenta de correo electrónico profesional en clientes como Microsoft Outlook, Thunderbird o Apple Mail, suele aparecer una pregunta habitual: <strong>¿debemos elegir la configuración POP3 o IMAP?</strong>
+        </p>
+        <p>
+          Aunque existen desde los inicios de Internet, comprender el funcionamiento de protocolos como <strong>POP3</strong> es clave para optimizar el almacenamiento del servidor corporativo y garantizar la seguridad de la información corporativa. En este artículo te explicamos qué es, cómo funciona y en qué escenarios conviene utilizarlo.
+        </p>
+
+        <h2>¿Qué es el protocolo POP3 y cómo funciona?</h2>
+        <p>
+          <strong>POP3</strong> son las siglas de <i>Post Office Protocol Version 3</i> (Protocolo de Oficina de Correo, versión 3). Es un protocolo de red estándar del modelo TCP/IP diseñado para **recibir y descargar mensajes de correo electrónico** desde un servidor remoto hasta un dispositivo local (ordenador, portátil o smartphone).
+        </p>
+        <p>
+          El funcionamiento clásico de POP3 se asemeja al de un buzón de correos físico tradicional:
+        </p>
+        <ol>
+          <li>El cliente de correo se conecta al servidor donde reside tu cuenta.</li>
+          <li>Descarga todos los correos entrantes a la memoria de tu equipo local.</li>
+          <li>Por defecto, elimina los correos del servidor una vez han sido descargados en tu dispositivo.</li>
+          <li>Se cierra la conexión con el servidor.</li>
+        </ol>
+
+        <div class="info-callout">
+          <p>
+            <strong>Consejo InByte:</strong> La mayoría de clientes de correo modernos permiten activar la casilla <i>"Dejar una copia de los mensajes en el servidor"</i> durante X días al usar POP3. Esto evita perder emails si accedes temporalmente desde otro dispositivo.
+          </p>
+        </div>
+
+        <h2>¿Para qué se usa POP3? Ventajas y desventajas</h2>
+        <p>
+          El uso principal de POP3 se centra en **descargar el correo electrónico directamente al almacenamiento local**, liberando espacio en el servidor y permitiendo la consulta de mensajes sin necesidad de conexión constante a Internet.
+        </p>
+
+        <h3>Principales ventajas de POP3</h3>
+        <ul>
+          <li><strong>Ahorro de espacio en el servidor:</strong> Al descargar y eliminar los mensajes del servidor, no saturas los límites de almacenamiento de tu alojamiento web o servidor de correo.</li>
+          <li><strong>Acceso offline:</strong> Todos tus correos, archivos adjuntos e historial quedan almacenados en el disco duro local, por lo que puedes consultarlos sin conexión a Internet.</li>
+          <li><strong>Menor uso de ancho de banda:</strong> La conexión solo se realiza puntualmente cuando solicitas enviar o recibir correo.</li>
+        </ul>
+
+        <h3>Inconvenientes a tener en cuenta</h3>
+        <ul>
+          <li><strong>Sin sincronización multidispositivo:</strong> Si lees un correo en tu ordenador principal, el estado "leído/no leído" o los cambios en carpetas no se reflejarán en tu smartphone.</li>
+          <li><strong>Riesgo de pérdida de datos:</strong> Si el disco duro de tu ordenador falla y no dispones de copias de seguridad (backups), podrías perder todo el historial de correo acumulado.</li>
+        </ul>
+
+        <h2>POP3 vs IMAP: ¿Cuál deberías elegir?</h2>
+        <p>
+          Mientras que **POP3** descarga el correo al dispositivo local, el protocolo **IMAP** funciona sincronizando el servidor con todos tus dispositivos en tiempo real. 
+        </p>
+        <ul>
+          <li><strong>Elige POP3 si:</strong> Utilizas un único ordenador de trabajo, cuentas con espacio reducido en tu plan de hosting y mantienes copias de seguridad locales automatizadas.</li>
+          <li><strong>Elige IMAP si:</strong> Necesitas revisar el correo desde varios dispositivos (ordenador, móvil, tablet) y requieres que las carpetas y estados de lectura se mantengan sincronizados.</li>
+        </ul>
+
+        <h2>Conclusión</h2>
+        <p>
+          Aunque la movilidad actual hace que IMAP sea el estándar predominante, el protocolo POP3 sigue siendo una solución excelente para empresas que manejan grandes volúmenes de archivos adjuntos y prefieren gestionar el archivo histórico de correo dentro de sus propios sistemas locales sin saturar la nube.
+        </p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img class="icon" src="../../image/icon.png" alt="Inbyte">
+          <img class="text" src="../../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+        </div>
+        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="../pages/servicios.html">Servicios</a>
+        <a href="../pages/planes.html">Planes</a>
+        <a href="../pages/cobertura.html">Cobertura</a>
+        <a href="../pages/nosotros.html">Quienes somos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="../pages/avisolegal.html">Aviso legal</a>
+        <a href="../pages/privacidad.html">Política de privacidad</a>
+        <a href="../pages/cookies.html">Cookies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
+        <span class="footer-text">L-V · 9:00–18:00h</span>
+        <span class="footer-text">+34 634 317 344</span>
+        <span class="footer-text">+34 613 638 697</span>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="../cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (!cookieConsent) {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

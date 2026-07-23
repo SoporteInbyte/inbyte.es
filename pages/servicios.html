@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InByte | Nuestros Servicios IT para Empresas</title>
+  <meta name="description" content="Servicios de IT para empresas: soporte a usuarios, administración de servidores, monitorización 24/7, instalación de redes y mantenimiento de equipos. Todo lo que tu empresa necesita.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12385a">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://inbyte.es/pages/servicios.html">
+  <link rel="icon" type="image/png" href="../image/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InByte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Nuestros Servicios IT para Empresas">
+  <meta property="og:description" content="Servicios de IT para empresas: soporte, servidores, monitorización, instalación y mantenimiento.">
+  <meta property="og:url" content="https://inbyte.es/pages/servicios.html">
+  <meta property="og:image" content="https://inbyte.es/image/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nuestros Servicios IT para Empresas">
+  <meta name="twitter:description" content="Servicios integrales de IT para empresas en la Región de Murcia.">
+  <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Departamento de IT externalizado",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "InByte",
+      "url": "https://inbyte.es",
+      "telephone": "+34634317344",
+      "email": "soporte@inbyte.es"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Región de Murcia"
+    },
+    "description": "Servicios integrales de IT para empresas en Murcia: soporte a usuarios, administración de servidores, monitorización 24/7, instalación de redes y mantenimiento de equipos.",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Catálogo de Servicios IT",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Soporte a usuarios Remoto y Presencial"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Instalación y Configuración de Redes y Servidores"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Administración y Mantenimiento de Servidores"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Monitorización de Servidores 24/7"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mantenimiento y Reparación de Equipos"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Proyectos IT a Medida"
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* Estilos de tarjetas e infraestructura de servicios */
+    .service-detail {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 36px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 20px rgba(18, 56, 90, 0.04);
+      transition: all .2s ease;
+    }
+    .service-detail:hover {
+      border-color: #00a8e8;
+      box-shadow: 0 12px 30px rgba(18, 56, 90, 0.1);
+    }
+    .service-detail h2 {
+      font-size: 1.5rem;
+      color: #12385a;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .service-detail h2 .badge-service {
+      font-size: 0.78rem;
+      font-family: 'JetBrains Mono', monospace;
+      background: #f1f5f9;
+      color: #12385a;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+    }
+    .service-detail p.service-intro {
+      color: #475569;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    /* Grid de Incluye / No Incluye */
+    .service-grid-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .service-grid-detail .col {
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .service-grid-detail .col-incluye {
+      background-color: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .service-grid-detail .col-no-incluye {
+      background-color: #fef2f2;
+      border-color: #fecaca;
+    }
+    .service-grid-detail .col h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .service-grid-detail .col-incluye h4 { color: #166534; }
+    .service-grid-detail .col-no-incluye h4 { color: #991b1b; }
+
+    .service-grid-detail ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .service-grid-detail ul li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .service-grid-detail .col-incluye ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: #10b981;
+      font-weight: bold;
+    }
+    .service-grid-detail .col-no-incluye ul li::before {
+      content: "✕";
+      position: absolute;
+      left: 0;
+      top: 6px;
+      color: #ef4444;
+      font-weight: bold;
+    }
+
+    .service-footer-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .service-tag-detail {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      color: #12385a;
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* Tarjeta destacada */
+    .service-detail-highlight {
+      border: 2px solid #00a8e8;
+      background: #f8fafc;
+    }
+    .service-detail-highlight .service-tag-detail {
+      background: #12385a;
+      color: #ffffff;
+    }
+
+    /* Botones de acción dentro de las tarjetas */
+    .btn-ghost-service {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #12385a;
+      border: 1px solid #12385a;
+      transition: all 0.2s ease;
+    }
+    .btn-ghost-service:hover {
+      background: #12385a;
+      color: #ffffff;
+    }
+
+    .btn-primary-service {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-decoration: none;
+      color: #ffffff;
+      background: #00a8e8;
+      border: 1px solid #00a8e8;
+      transition: all 0.2s ease;
+    }
+    .btn-primary-service:hover {
+      background: #008cc3;
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #12385a;
+      color: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: none;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cookie-content p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+    .cookie-content a {
+      color: #00a8e8;
+      text-decoration: underline;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept {
+      background: #00a8e8;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-cookie-reject {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .service-grid-detail {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .service-detail {
+        padding: 24px 18px;
+      }
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cookie-buttons {
+        width: 100%;
+      }
+      .cookie-buttons button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="nav">
+      <a href="../index.html" class="brand" aria-label="Ir al inicio">
+        <img class="icon" src="../image/icon.png" alt="Inbyte icono">
+        <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+      </a>
+      <nav class="navlinks">
+        <a href="planes.html">Planes</a>
+        <a href="servicios.html" class="active">Servicios</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="blog.html">Blog</a>
+        <a href="nosotros.html">Quiénes somos</a>
+      </nav>
+      <a class="btn btn-primary" href="contacto.html">Contactar</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" style="padding-bottom: 20px; text-align: left;">
+      <div class="wrap" style="text-align: left; margin: 0 auto; max-width: 1200px;">
+        <p class="eyebrow">
+          Servicios Especializados IT
+        </p>
+        <h1 style="text-align: left;">Todo lo que tu empresa <span class="accent">necesita en IT</span></h1>
+        <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
+          Nos integramos como su departamento de IT de forma transparente, desde la atención a usuarios hasta el mantenimiento y la infraestructura de servidores.
+        </p>
+      </div>
+    </section>
+
+    <section id="servicios-detalle" style="padding-top: 0;">
+      <div class="wrap">
+
+        <div class="service-detail reveal">
+          <h2>
+            1. Soporte a usuarios
+            <span class="badge-service">Remoto · Presencial</span>
+          </h2>
+          <p class="service-intro">Gestionamos las incidencias diarias de sus usuarios para que puedan trabajar sin interrupciones. Disponemos de un sistema de tickets que permite hacer seguimiento de cada caso.</p>
+          
+          <div class="service-grid-detail">
+            <div class="col col-incluye">
+              <h4>✔ Incluye</h4>
+              <ul>
+                <li>Atención remota en horario laboral (L-V, 9:00-18:00h)</li>
+                <li>Resolución de incidencias de software ofimático</li>
+                <li>Configuración y resolución de problemas de correo electrónico</li>
+                <li>Gestión de impresoras y periféricos</li>
+                <li>Configuración de accesos y permisos de usuario</li>
+                <li>Soporte presencial programado o urgente cuando sea necesario</li>
+                <li>Registro y seguimiento de cada caso mediante ticket</li>
+              </ul>
+            </div>
+            <div class="col col-no-incluye">
+              <h4>✕ No incluye</h4>
+              <ul>
+                <li>Desarrollo de software a medida</li>
+                <li>Gestión de bases de datos complejas (consultar)</li>
+                <li>Soporte fuera de horario (disponible con coste adicional)</li>
+                <li>Formación de usuarios (consultar presupuesto)</li>
+                <li>Soporte a software privativo</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-footer-bar">
+            <span class="service-tag-detail">SLA garantizado por criticidad</span>
+            <a href="contacto.html" class="btn-ghost-service">Consultar este servicio</a>
+          </div>
+        </div>
+
+        <div class="service-detail reveal">
+          <h2>
+            2. Instalación y configuración
+            <span class="badge-service">Servidores · Redes · Racks</span>
+          </h2>
+          <p class="service-intro">Realizamos la instalación física y configuración lógica de toda la infraestructura IT de su empresa, desde el cableado hasta la puesta en marcha de servidores y equipos de red.</p>
+          
+          <div class="service-grid-detail">
+            <div class="col col-incluye">
+              <h4>✔ Incluye</h4>
+              <ul>
+                <li>Instalación física de infraestructura y comunicaciones</li>
+                <li>Cableado estructurado y etiquetado de la infraestructura de red</li>
+                <li>Configuración de red, segmentación y seguridad perimetral</li>
+                <li>Instalación y configuración de servidores (físicos, VPS o cloud)</li>
+                <li>Instalación de racks y armarios de comunicaciones</li>
+                <li>Configuración de switches, routers y firewalls</li>
+                <li>Entrega con la infraestructura instalada, configurada y operativa</li>
+              </ul>
+            </div>
+            <div class="col col-no-incluye">
+              <h4>✕ No incluye</h4>
+              <ul>
+                <li>Equipos hardware (servidores, switches, racks) - se presupuestan aparte</li>
+                <li>Licencias de software - se presupuestan aparte</li>
+                <li>Mantenimiento posterior (incluido en planes de soporte)</li>
+                <li>Obra civil o reformas para el cableado (se valora en cada caso)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-footer-bar">
+            <span class="service-tag-detail">Presupuesto personalizado según necesidades</span>
+            <a href="contacto.html" class="btn-ghost-service">Consultar este servicio</a>
+          </div>
+        </div>
+
+        <div class="service-detail reveal">
+          <h2>
+            3. Administración y mantenimiento de servidores
+            <span class="badge-service">Físicos · VPS · Cloud</span>
+          </h2>
+          <p class="service-intro">Mantenemos sus servidores actualizados, seguros y funcionando a pleno rendimiento. Gestionamos la infraestructura para que usted no tenga que preocuparse por la parte técnica.</p>
+          
+          <div class="service-grid-detail">
+            <div class="col col-incluye">
+              <h4>✔ Incluye</h4>
+              <ul>
+                <li>Administración y mantenimiento de servidores (Windows y Linux)</li>
+                <li>Gestión de usuarios, permisos y accesos</li>
+                <li>Actualizaciones y parches de seguridad</li>
+                <li>Supervisión y gestión de las copias de seguridad</li>
+                <li>Optimización del rendimiento de los servidores</li>
+                <li>Gestión de servicios y aplicaciones instaladas</li>
+                <li>Asesoramiento sobre actualizaciones y mejoras</li>
+              </ul>
+            </div>
+            <div class="col col-no-incluye">
+              <h4>✕ No incluye</h4>
+              <ul>
+                <li>Almacenamiento para copias de seguridad (se gestiona sobre la infraestructura del cliente)</li>
+                <li>Servidores adicionales (se presupuestan aparte)</li>
+                <li>Desarrollo de aplicaciones personalizadas</li>
+                <li>Gestión de bases de datos complejas (consultar)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-footer-bar">
+            <span class="service-tag-detail">Disponible en planes Profesional y Corporativo</span>
+            <a href="contacto.html" class="btn-ghost-service">Consultar este servicio</a>
+          </div>
+        </div>
+
+        <div class="service-detail reveal">
+          <h2>
+            4. Monitorización de servidores
+            <span class="badge-service">24/7</span>
+          </h2>
+          <p class="service-intro">Vigilamos sus servidores y servicios las 24 horas del día, los 7 días de la semana. Ante cualquier anomalía, recibirá una alerta y actuaremos para minimizar el impacto en su empresa.</p>
+          
+          <div class="service-grid-detail">
+            <div class="col col-incluye">
+              <h4>✔ Incluye</h4>
+              <ul>
+                <li>Monitorización 24/7 de servidores y servicios críticos</li>
+                <li>Alertas automáticas ante caídas o comportamientos anómalos</li>
+                <li>Informe mensual del estado de la infraestructura</li>
+                <li>Detección temprana de problemas para minimizar el impacto</li>
+                <li>Monitorización de uso de CPU, memoria, disco y red</li>
+                <li>Monitorización de servicios críticos (web, correo, base de datos)</li>
+              </ul>
+            </div>
+            <div class="col col-no-incluye">
+              <h4>✕ No incluye</h4>
+              <ul>
+                <li>Resolución automática de incidencias (requiere plan con actuación)</li>
+                <li>Monitorización de equipos de usuario final</li>
+                <li>Monitorización de redes externas (proveedores de internet)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-footer-bar">
+            <span class="service-tag-detail">Disponible en todos los planes</span>
+            <a href="contacto.html" class="btn-ghost-service">Consultar este servicio</a>
+          </div>
+        </div>
+
+        <div class="service-detail reveal">
+          <h2>
+            5. Mantenimiento de equipos
+            <span class="badge-service">Reparación · Renovación · Migración</span>
+          </h2>
+          <p class="service-intro">Diagnosticamos y reparamos averías de hardware, ampliamos componentes y preparamos equipos nuevos para que estén listos para trabajar desde el primer día.</p>
+          
+          <div class="service-grid-detail">
+            <div class="col col-incluye">
+              <h4>✔ Incluye</h4>
+              <ul>
+                <li>Diagnóstico y reparación de averías de hardware</li>
+                <li>Sustitución y ampliación de componentes: discos, memoria y periféricos</li>
+                <li>Preparación de equipos nuevos listos para trabajar</li>
+                <li>Migración de datos entre equipos</li>
+                <li>Limpieza y mantenimiento preventivo de equipos</li>
+                <li>Configuración de software y aplicaciones</li>
+                <li>Revisión de seguridad y actualizaciones</li>
+              </ul>
+            </div>
+            <div class="col col-no-incluye">
+              <h4>✕ No incluye</h4>
+              <ul>
+                <li>Componentes hardware (se presupuestan aparte)</li>
+                <li>Reparación de equipos fuera de garantía con daños graves (se valora)</li>
+                <li>Soporte para equipos con más de 10 años antigüedad (consultar)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-footer-bar">
+            <span class="service-tag-detail">Bajo demanda o incluido en planes</span>
+            <a href="contacto.html" class="btn-ghost-service">Consultar este servicio</a>
+          </div>
+        </div>
+
+        <div class="service-detail service-detail-highlight reveal">
+          <h2>
+            6. Proyectos a medida
+            <span class="badge-service">ERP · VPN · Migración · Cámaras IP</span>
+          </h2>
+          <p class="service-intro">Si necesita implantar, ampliar o migrar infraestructura o servicios, elaboramos un presupuesto personalizado adaptado a sus necesidades específicas.</p>
+          
+          <div class="service-grid-detail">
+            <div class="col col-incluye">
+              <h4>✔ Incluye</h4>
+              <ul>
+                <li>Análisis de necesidades y propuesta de solución</li>
+                <li>Implantación de nuevos servidores</li>
+                <li>Instalación de redes Wi-Fi empresariales</li>
+                <li>Migración de infraestructura a la nube</li>
+                <li>Instalación de sistemas de videovigilancia (cámaras IP)</li>
+                <li>Implantación de ERP o sistemas de gestión</li>
+                <li>Configuración de VPN para teletrabajo seguro</li>
+                <li>Planificación y ejecución de migraciones de datos</li>
+              </ul>
+            </div>
+            <div class="col col-no-incluye">
+              <h4>✕ No incluye</h4>
+              <ul>
+                <li>Equipos y licencias (se presupuestan aparte)</li>
+                <li>Mantenimiento posterior (incluido en planes de soporte)</li>
+                <li>Proyectos que requieran obra civil (se valora)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="service-footer-bar">
+            <span class="service-tag-detail">Presupuesto personalizado · Sin compromiso</span>
+            <a href="contacto.html" class="btn-primary-service">Solicitar presupuesto</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div class="contact-grid">
+            <div>
+              <p class="eyebrow" style="color:#7fd0ee;">Asesoramiento Técnico</p>
+              <h2>¿Tienes ddas sobre la cobertura de nuestros servicios?</h2>
+              <p>Si no está seguro de qué nivel de soporte, infraestructura o administración de sistemas se adapta a su empresa, nuestro equipo analiza sus instalaciones sin compromiso.</p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-row">
+                <span class="contact-label">Correo de soporte</span>
+                <span class="contact-value mono">soporte@inbyte.es</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Horario de atención</span>
+                <span class="contact-value">L-V · 9:00-18:00h</span>
+              </div>
+              <a class="btn btn-primary" href="contacto.html">Consultar con un técnico</a>
+              <p class="contact-footnote">¿Busca un servicio o integración a medida? Cuéntenos su proyecto y le asesoramos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img class="icon" src="../image/icon.png" alt="Inbyte">
+          <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+        </div>
+        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="servicios.html">Servicios</a>
+        <a href="planes.html">Planes</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="nosotros.html">Quienes somos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="avisolegal.html">Aviso legal</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
+        <span class="footer-text">L-V · 9:00–18:00h</span>
+        <span class="footer-text">+34 634 317 344</span>
+        <span class="footer-text">+34 613 638 697</span>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Intersection Observer para animaciones .reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Lógica del aviso de cookies
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (!cookieConsent) {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

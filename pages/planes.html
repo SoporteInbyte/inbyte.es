@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InByte | Nuestros Planes para Empresas</title>
+  <meta name="description" content="Compara nuestros planes de mantenimiento e infraestructura IT para pymes. Soporte remoto, presencial y monitorización 24/7.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12385a">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="https://inbyte.es/pages/planes.html">
+  <link rel="icon" type="image/png" href="../image/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InByte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Nuestros Planes para Empresas">
+  <meta property="og:description" content="Compara nuestros planes de mantenimiento e infraestructura IT para pymes. Soporte remoto, presencial y monitorización 24/7.">
+  <meta property="og:url" content="https://inbyte.es/pages/planes.html">
+  <meta property="og:image" content="https://inbyte.es/image/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nuestros Planes para Empresas">
+  <meta name="twitter:description" content="Cobertura técnica y alcance de nuestros servicios de soporte IT.">
+  <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+  
+  <style>
+    /* Contenedor principal de la tabla (aplica bordes redondeados y sombra) */
+    .plans-table-container {
+      overflow-x: auto; /* Permite desplazamiento horizontal en móviles si la tabla no cabe */
+      margin-top: 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(18, 56, 90, 0.08); /* Sombra suave con tono azul corporativo */
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Estructura general de la tabla */
+    .plans-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      text-align: center;
+      min-width: 800px;
+      table-layout: fixed; /* Fuerza a que las columnas tengan anchos proporcionales */
+    }
+
+    /* Padding base para celdas y filas */
+    .plans-table th, .plans-table td {
+      padding: 16px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    /* Configuración de la primera columna (Nombres de características) */
+    .plans-table th:first-child,
+    .plans-table td:first-child {
+      text-align: left; /* Alineado totalmente a la izquierda */
+      font-weight: 600;
+      width: 31%; /* Ancho ajustado para descripciones detalladas */
+      padding-left: 24px;
+      color: #12385a; /* Azul marino corporativo */
+    }
+
+    /* Ancho uniforme para las 3 columnas de los planes (Esencial, Profesional, Corporativo) */
+    .plans-table th:not(:first-child),
+    .plans-table td:not(:first-child) {
+      width: 23%;
+    }
+
+    /* Estilos de la cabecera superior (thead) */
+    .plans-table th {
+      background-color: #f8fafc;
+      vertical-align: bottom; /* Empuja el contenido hacia abajo para alinear botones */
+      padding: 24px 12px 20px 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    /* Tarjetas individuales de cada plan en la cabecera */
+    .plan-card-header {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column; /* Organiza los elementos en columna vertical */
+      align-items: center; /* Centra el contenido horizontalmente dentro de la tarjeta */
+      justify-content: space-between; /* Distribuye el espacio entre el título, precio y botón */
+      min-height: 250px; /* Asegura que todas las tarjetas tengan exactamente la misma altura */
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+
+    /* Plan Profesional destacado con los colores principales de la empresa */
+    .plan-card-header.featured {
+      background: #12385a; /* Fondo azul marino de la empresa */
+      border-color: #12385a;
+      color: #ffffff;
+      box-shadow: 0 8px 20px rgba(18, 56, 90, 0.25);
+    }
+
+    /* Badge superior para "Más popular" */
+    .plan-badge-top {
+      background: #00a8e8; /* Azul claro / acento corporativo */
+      color: #ffffff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    /* Espaciador invisible para las tarjetas que NO tienen badge (mantiene alineados los títulos) */
+    .plan-badge-placeholder {
+      height: 23px;
+      margin-bottom: 8px;
+    }
+
+    /* Título del plan (Ej: Esencial, Profesional, Corporativo) */
+    .plan-header-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #12385a;
+      margin-bottom: 2px;
+    }
+
+    /* Ajuste de color del título para la tarjeta destacada */
+    .plan-card-header.featured .plan-header-title {
+      color: #ffffff;
+    }
+
+    /* Subtítulo del plan (Ej: Hasta 10 usuarios) */
+    .plan-header-subtitle {
+      font-size: 0.82rem;
+      color: #64748b;
+      font-weight: 400;
+      margin-bottom: 14px;
+    }
+
+    .plan-card-header.featured .plan-header-subtitle {
+      color: #cbd5e1;
+    }
+
+    /* Contenedor del precio */
+    .plan-price-box {
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    /* Precio anterior tachado */
+    .old-price {
+      font-size: 0.82rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .plan-card-header.featured .old-price {
+      color: #94a3b8;
+    }
+
+    /* Precio actual con descuento */
+    .current-price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #12385a;
+      line-height: 1;
+    }
+
+    .plan-card-header.featured .current-price {
+      color: #00a8e8; /* Resalta el precio en azul claro en la tarjeta oscura */
+    }
+
+    /* Texto '/mes' */
+    .price-period {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: #64748b;
+    }
+
+    .plan-card-header.featured .price-period {
+      color: #cbd5e1;
+    }
+
+    /* Estilos generales para los botones dentro de las tarjetas */
+    .plan-btn {
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      transition: all 0.2s ease;
+      box-sizing: border-box;
+    }
+
+    /* Botón estilo contorno (Usado en Esencial y Corporativo) */
+    .plan-btn-ghost {
+      background: transparent;
+      color: #12385a;
+      border: 1px solid #12385a;
+    }
+
+    .plan-btn-ghost:hover {
+      background: #12385a;
+      color: #ffffff;
+    }
+
+    /* Botón estilo solido (Usado en el plan Profesional) */
+    .plan-btn-primary {
+      background: #00a8e8;
+      color: #ffffff;
+      border: 1px solid #00a8e8;
+    }
+
+    .plan-btn-primary:hover {
+      background: #008cc3;
+      border-color: #008cc3;
+    }
+
+    /* Filas divisoras de categorías dentro de la tabla (Ej: SOPORTE Y ATENCIÓN) */
+    .plans-table .feature-group {
+      background-color: #f1f5f9;
+      font-weight: 700;
+      color: #12385a;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0.8px;
+      text-align: left;
+      padding-left: 24px;
+    }
+
+    /* Iconos de check y cruz */
+    .check-icon {
+      color: #10b981;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .cross-icon {
+      color: #cbd5e1;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* Fondo tenue para la columna entera del plan Profesional en el cuerpo */
+    .highlight-col {
+      background-color: rgba(18, 56, 90, 0.02);
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #12385a;
+      color: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: none;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cookie-content p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+    .cookie-content a {
+      color: #00a8e8;
+      text-decoration: underline;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept {
+      background: #00a8e8;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-cookie-reject {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cookie-buttons {
+        width: 100%;
+      }
+      .cookie-buttons button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="nav">
+      <a href="../index.html" class="brand" aria-label="Ir al inicio">
+        <img class="icon" src="../image/icon.png" alt="Inbyte icono">
+        <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+      </a>
+      <nav class="navlinks">
+        <a href="planes.html" class="active">Planes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="blog.html">Blog</a>
+        <a href="nosotros.html">Quiénes somos</a>
+      </nav>
+      <a class="btn btn-primary" href="contacto.html">Contactar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 20px; text-align: left;">
+      <div class="wrap" style="text-align: left; margin: 0 auto; max-width: 1200px;">
+        <p class="eyebrow" style="color: #e63946; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px;">
+          ¡Oferta Especial 25% de Descuento los 3 primeros meses!
+        </p>
+        <h1 style="text-align: left;">Nuestros planes para las <span class="accent">empresas</span></h1>
+        <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
+          Consulte de forma transparente todas las coberturas, servicios y características incluidas en cada nivel de mantenimiento.
+        </p>
+      </div>
+    </section>
+
+    <section style="padding-top: 0;">
+      <div class="wrap">
+        
+        <div class="plans-table-container reveal">
+          <table class="plans-table">
+            <thead>
+              <tr>
+                <th style="vertical-align: middle;">
+                  <span style="font-size: 1.1rem; font-weight: 700; color: #12385a;">Características</span>
+                </th>
+                
+                <th>
+                  <div class="plan-card-header">
+                    <div class="plan-badge-placeholder"></div> <div class="plan-header-title">Esencial</div>
+                    <div class="plan-header-subtitle">Hasta 10 usuarios</div>
+                    <div class="plan-price-box">
+                      <div class="old-price">249 € / mes</div>
+                      <div class="current-price">186 € <span class="price-period">/mes</span></div>
+                    </div>
+                    <a href="contacto.html" class="plan-btn plan-btn-ghost">Solicitar</a>
+                  </div>
+                </th>
+
+                <th class="highlight-col">
+                  <div class="plan-card-header featured">
+                    <div class="plan-badge-top">Más popular</div> <div class="plan-header-title">Profesional</div>
+                    <div class="plan-header-subtitle">11 a 30 usuarios</div>
+                    <div class="plan-price-box">
+                      <div class="old-price">599 € / mes</div>
+                      <div class="current-price">449 € <span class="price-period">/mes</span></div>
+                    </div>
+                    <a href="contacto.html" class="plan-btn plan-btn-primary">Solicitar</a>
+                  </div>
+                </th>
+
+                <th>
+                  <div class="plan-card-header">
+                    <div class="plan-badge-placeholder"></div> <div class="plan-header-title">Corporativo</div>
+                    <div class="plan-header-subtitle">+30 usuarios o varias sedes</div>
+                    <div class="plan-price-box">
+                      <div class="old-price">Desde 999 € / mes</div>
+                      <div class="current-price"><span style="font-size: 1.1rem; font-weight: 600;">Desde</span> 749 € <span class="price-period">/mes</span></div>
+                    </div>
+                    <a href="contacto.html" class="plan-btn plan-btn-ghost">Solicitar</a>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td colspan="4" class="feature-group">Soporte Técnico y SLA</td>
+              </tr>
+              <tr>
+                <td>Soporte remoto ilimitado (L-V 9:00-18:00h)</td>
+                <td><span class="check-icon">✔</span></td>
+                <td class="highlight-col"><span class="check-icon">✔</span></td>
+                <td><span class="check-icon">✔</span></td>
+              </tr>
+              <tr>
+                <td>Soporte presencial incluido</td>
+                <td>Bajo demanda (85€/int)</td>
+                <td class="highlight-col">4 horas / mes</td>
+                <td>10 horas / mes</td>
+              </tr>
+              <tr>
+                <td>Desplazamiento incluido (hasta 50 km)</td>
+                <td><span class="cross-icon">✕</span></td>
+                <td class="highlight-col"><span class="check-icon">✔</span></td>
+                <td><span class="check-icon">✔</span></td>
+              </tr>
+              <tr>
+                <td>Exceso de horas o intervenciones adicionales</td>
+                <td>Facturación aparte</td>
+                <td class="highlight-col">Facturación aparte</td>
+                <td>Facturación aparte</td>
+              </tr>
+
+              <tr>
+                <td colspan="4" class="feature-group">Disponibilidad y Urgencias Críticas</td>
+              </tr>
+              <tr>
+                <td>Atención al cliente general</td>
+                <td>L-V · 9:00 - 18:00h</td>
+                <td class="highlight-col">L-V · 9:00 - 18:00h</td>
+                <td>L-V · 9:00 - 18:00h</td>
+              </tr>
+              <tr>
+                <td>Guardias 24/7 en emergencias críticas <br><small style="color:#64748b; font-weight:normal;">(Servidor caído físico/virtual o caída crítica de red)</small></td>
+                <td><span class="cross-icon">✕</span></td>
+                <td class="highlight-col"><span class="check-icon">✔</span></td>
+                <td><span class="check-icon">✔</span></td>
+              </tr>
+
+              <tr>
+                <td colspan="4" class="feature-group">Servidores, Redes y Copias de Seguridad</td>
+              </tr>
+              <tr>
+                <td>Monitorización preventiva 24/7</td>
+                <td>Solo aviso</td>
+                <td class="highlight-col">Con actuación</td>
+                <td>Actuación inmediata</td>
+              </tr>
+              <tr>
+                <td>Supervisión de copias de seguridad existentes <br><small style="color:#64748b; font-weight:normal;">(Comprobación y gestiones con proveedor/VPS contratado)</small></td>
+                <td>Semanal</td>
+                <td class="highlight-col">Diaria / Continua</td>
+                <td>Diaria / Continua</td>
+              </tr>
+              <tr>
+                <td>Alojamiento de copias de seguridad propio</td>
+                <td><span class="cross-icon">✕</span></td>
+                <td class="highlight-col"><span class="cross-icon">✕</span></td>
+                <td><span class="cross-icon">✕</span></td>
+              </tr>
+              <tr>
+                <td>Servicio / Licenciamiento EDR</td>
+                <td><span class="cross-icon">✕</span></td>
+                <td class="highlight-col"><span class="cross-icon">✕</span></td>
+                <td><span class="cross-icon">✕</span></td>
+              </tr>
+
+              <tr>
+                <td colspan="4" class="feature-group">Equipos, Dispositivos y Licencias</td>
+              </tr>
+              <tr>
+                <td>Alcance de soporte por usuario</td>
+                <td>1 Equipo PC/Portátil</td>
+                <td class="highlight-col">1 Equipo PC/Portátil</td>
+                <td>1 Equipo PC/Portátil</td>
+              </tr>
+              <tr>
+                <td>Configuración básica de teléfonos móviles <br><small style="color:#64748b; font-weight:normal;">(Ajuste inicial de correo y redes corporativas)</small></td>
+                <td><span class="check-icon">✔</span></td>
+                <td class="highlight-col"><span class="check-icon">✔</span></td>
+                <td><span class="check-icon">✔</span></td>
+              </tr>
+              <tr>
+                <td>Instalación de licencias corporativas <br><small style="color:#64748b; font-weight:normal;">(Windows, Office / Microsoft 365 del cliente)</small></td>
+                <td><span class="check-icon">✔</span></td>
+                <td class="highlight-col"><span class="check-icon">✔</span></td>
+                <td><span class="check-icon">✔</span></td>
+              </tr>
+              <tr>
+                <td>Informe mensual de estado de infraestructura</td>
+                <td><span class="cross-icon">✕</span></td>
+                <td class="highlight-col"><span class="check-icon">✔</span></td>
+                <td><span class="check-icon">✔</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="plans-custom-cta reveal" style="margin-top: 40px;">
+          <div class="plans-custom-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2 L14 9 L21 9 L15.5 13.5 L17.5 21 L12 16.5 L6.5 21 L8.5 13.5 L3 9 L10 9 Z"/>
+            </svg>
+          </div>
+          <div class="plans-custom-text">
+            <h3>¿Necesita un plan adaptado a su medida?</h3>
+            <p>Si su empresa cuenta con requerimientos especiales de servidores o sedes, diseñamos una propuesta personalizada manteniendo la promoción.</p>
+          </div>
+          <a class="plans-custom-btn" href="contacto.html">
+            Consultar plan a medida
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <p class="plans-note" style="margin-top: 25px;">
+          * Las copias de seguridad se gestionan y verifican sobre la infraestructura previamente contratada por el cliente. Las horas adicionales agotadas se facturan según tarifa vigente. Los precios no incluyen IVA. Oferta del 25% aplicada durante los 3 primeros meses de contratación. Sin compromiso de permanencia.
+        </p>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="wrap">
+        <div class="contact reveal">
+          <div class="contact-grid">
+            <div>
+              <p class="eyebrow" style="color:#7fd0ee;">Contacto</p>
+              <h2>¿Tiene dudas sobre qué plan elegir?</h2>
+              <p>Escríbanos y realizaremos un diagnóstico rápido para recomendarle el nivel de servicio más eficiente para sus instalaciones.</p>
+            </div>
+            <div class="contact-card">
+              <div class="contact-row">
+                <span class="contact-label">Correo de soporte</span>
+                <span class="contact-value mono">soporte@inbyte.es</span>
+              </div>
+              <div class="contact-row">
+                <span class="contact-label">Horario de soporte</span>
+                <span class="contact-value">L-V · 9:00-18:00h</span>
+              </div>
+              <a class="btn btn-primary" href="contacto.html">Solicitar propuesta</a>
+              <p class="contact-footnote">¿Necesita atención fuera de este horario? También lo cubrimos bajo demanda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img class="icon" src="../image/icon.png" alt="Inbyte">
+          <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+        </div>
+        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="servicios.html">Servicios</a>
+        <a href="planes.html">Planes</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="nosotros.html">Quienes somos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="avisolegal.html">Aviso legal</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
+        <span class="footer-text">L-V · 9:00–18:00h</span>
+        <span class="footer-text">+34 634 317 344</span>
+        <span class="footer-text">+34 613 638 697</span>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, {threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // Lógica del aviso de cookies
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (!cookieConsent) {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

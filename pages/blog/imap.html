@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>InByte | ¿Qué es IMAP y cómo funciona?</title>
+
+  <meta name="description" content="Descubra qué es el protocolo IMAP, cómo funciona la sincronización de correo entre dispositivos y cuáles son sus ventajas frente a POP3.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12385a">
+  <meta name="color-scheme" content="light">
+
+  <link rel="canonical" href="https://inbyte.es/pages/blog/imamp.html">
+  <link rel="icon" type="image/png" href="../../image/favicon.ico">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="InByte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="¿Qué es IMAP y cómo funciona?">
+  <meta property="og:description" content="Explicación clara sobre el protocolo IMAP, ventajas para empresas y diferencias clave con POP3.">
+  <meta property="og:url" content="https://inbyte.es/pages/blog/queesimap.html">
+  <meta property="og:image" content="https://inbyte.es/image/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="¿Qué es IMAP y cómo funciona?">
+  <meta name="twitter:description" content="Guía sobre el protocolo de correo IMAP para pymes y profesionales.">
+  <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../../styles.css">
+
+  <style>
+    .article-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #00a8e8;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .article-header {
+      margin-bottom: 32px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 24px;
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      color: #12385a;
+      line-height: 1.25;
+      margin: 12px 0 16px;
+      font-weight: 700;
+    }
+
+    .article-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      color: #64748b;
+      font-size: 0.88rem;
+    }
+
+    .article-body {
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .article-body h2 {
+      font-size: 1.5rem;
+      color: #12385a;
+      margin: 36px 0 16px;
+      font-weight: 700;
+    }
+
+    .article-body h3 {
+      font-size: 1.2rem;
+      color: #12385a;
+      margin: 24px 0 12px;
+      font-weight: 600;
+    }
+
+    .article-body p {
+      margin-bottom: 20px;
+    }
+
+    .article-body ul {
+      margin: 0 0 24px 20px;
+      padding: 0;
+    }
+
+    .article-body li {
+      margin-bottom: 8px;
+    }
+
+    /* Tabla Comparativa */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      font-size: 0.95rem;
+    }
+
+    .compare-table th, .compare-table td {
+      border: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      text-align: left;
+    }
+
+    .compare-table th {
+      background: #12385a;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .compare-table tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .info-callout {
+      background: #f0f9ff;
+      border-left: 4px solid #00a8e8;
+      border-radius: 0 8px 8px 0;
+      padding: 20px;
+      margin: 28px 0;
+    }
+
+    .info-callout p {
+      margin: 0;
+      color: #0369a1;
+      font-size: 0.98rem;
+    }
+
+    /* Banner CTA en Artículo */
+    .article-cta {
+      background: linear-gradient(135deg, #12385a 0%, #1e4d7b 100%);
+      border-radius: 16px;
+      padding: 32px;
+      color: #ffffff;
+      margin-top: 48px;
+      text-align: center;
+    }
+
+    .article-cta h3 {
+      color: #ffffff;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .article-cta p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #12385a;
+      color: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: none;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cookie-content p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+    .cookie-content a {
+      color: #00a8e8;
+      text-decoration: underline;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept {
+      background: #00a8e8;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-cookie-reject {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    header {
+      position: relative !important;
+      top: auto !important;
+    }
+
+    @media (max-width: 768px) {
+      .compare-table {
+        font-size: 0.85rem;
+      }
+      .compare-table th, .compare-table td {
+        padding: 8px 10px;
+      }
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cookie-buttons {
+        width: 100%;
+      }
+      .cookie-buttons button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="nav">
+      <a href="../../index.html" class="brand" aria-label="Ir al inicio">
+        <img class="icon" src="../../image/icon.png" alt="InByte icono">
+        <img class="text" src="../../image/text.png" alt="InByte Soluciones Tecnológicas">
+      </a>
+      <nav class="navlinks">
+        <a href="../planes.html">Planes</a>
+        <a href="../servicios.html">Servicios</a>
+        <a href="../cobertura.html">Cobertura</a>
+        <a href="../blog.html" class="active">Blog</a>
+        <a href="../nosotros.html">Quiénes somos</a>
+      </nav>
+      <a class="btn btn-primary" href="../contacto.html">Contactar</a>
+    </div>
+  </header>
+
+  <main>
+    <article class="article-wrapper">
+      <a href="../blog.html" class="back-link">&larr; Volver al Blog</a>
+
+      <header class="article-header">
+        <span class="blog-tag">Correo & Servidores</span>
+        <h1 class="article-title">¿Qué es IMAP y cómo funciona? Guía práctica para empresas</h1>
+        <div class="article-meta">
+          <span>InByte Soluciones Tecnologicas</span>
+          <span>&bull;</span>
+          <span>Actualizado en 2026</span>
+          <span>&bull;</span>
+          <span>Lectura: 4 min</span>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <p>
+          En el entorno profesional actual, consultar el correo electrónico corporativo desde el ordenador de la oficina, el móvil personal y la tablet se ha convertido en la norma. Sin embargo, para que todas las carpetas, correos leídos y borradores estén perfectamente actualizados en cada pantalla, es fundamental utilizar el protocolo adecuado: <strong>IMAP</strong>.
+        </p>
+
+        <h2>¿Qué es el protocolo IMAP?</h2>
+        <p>
+          <strong>IMAP</strong> son las siglas de <em>Internet Message Access Protocol</em> (Protocolo de Acceso a Mensajes de Internet). Es un estándar que permite a aplicaciones de correo (como Outlook, Thunderbird o Apple Mail) acceder y gestionar los mensajes almacenados directamente en el servidor de correo.
+        </p>
+        <p>
+          A diferencia de otros métodos antiguos, IMAP no descarga el correo y lo elimina del servidor, sino que mantiene el contenido centralizado en la nube y realiza una <strong>sincronización bidireccional en tiempo real</strong>.
+        </p>
+
+        <h2>¿Cómo funciona IMAP en la práctica?</h2>
+        <p>
+          Cuando abres tu cliente de correo configurado con IMAP, ocurren los siguientes pasos:
+        </p>
+        <ul>
+          <li><strong>Conexión:</strong> El cliente de correo se conecta al servidor donde reside tu cuenta empresarial.</li>
+          <li><strong>Sincronización:</strong> Se muestra el listado de mensajes, carpetas, correos enviados y estados (leído, no leído, respondido).</li>
+          <li><strong>Acción reflejada:</strong> Si organizas un e-mail dentro de una carpeta desde el teléfono móvil, esa misma estructura se reflejará al instante cuando abras el ordenador.</li>
+        </ul>
+
+        <div class="info-callout">
+          <p>
+            <strong>Nota clave:</strong> Con IMAP, si borras un correo desde tu teléfono, también se borrará del servidor y del ordenador. Todo permanece en perfecta sintonía.
+          </p>
+        </div>
+
+        <h2>Diferencias principales: IMAP vs. POP3</h2>
+        <p>
+          A menudo surge la duda entre elegir IMAP o POP3 al configurar una cuenta corporativa. Aquí tienes una comparativa directa:
+        </p>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Característica</th>
+              <th>IMAP</th>
+              <th>POP3</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ubicación del correo</strong></td>
+              <td>Se mantiene en el servidor.</td>
+              <td>Se descarga en el dispositivo.</td>
+            </tr>
+            <tr>
+              <td><strong>Múltiples dispositivos</strong></td>
+              <td>Ideal (sincronizado en todos).</td>
+              <td>Complicado (los emails quedan atrapados en un equipo).</td>
+            </tr>
+            <tr>
+              <td><strong>Bandeja de Salida/Enviados</strong></td>
+              <td>Sincronizada en todos lados.</td>
+              <td>Solo visible en el dispositivo emisor.</td>
+            </tr>
+            <tr>
+              <td><strong>Uso de almacenamiento</strong></td>
+              <td>Requiere espacio suficiente en el servidor.</td>
+              <td>Ocupa espacio en el disco local del equipo.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Ventajas de IMAP para tu empresa</h2>
+        <ul>
+          <li><strong>Acceso desde cualquier lugar:</strong> Tu equipo puede trabajar desde la oficina, casa o en movilidad sin perder el hilo de las conversaciones.</li>
+          <li><strong>Respaldo centralizado:</strong> Al estar guardado en el servidor, si un ordenador se avería o se pierde, no pierdes tu historial de correo.</li>
+          <li><strong>Organización colaborativa:</strong> Facilita la gestión de buzones compartidos o delegaciones.</li>
+        </ul>
+
+        <h2>¿Cuándo es recomendable IMAP?</h2>
+        <p>
+          Para casi el 100% de las empresas actuales, <strong>IMAP es la opción recomendada</strong>. Únicamente se valoraría POP3 en situaciones excepcionales con buzones de capacidad extremadamente limitada o conexiones sin acceso continuado a Internet.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img class="icon" src="../../image/icon.png" alt="Inbyte">
+          <img class="text" src="../../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+        </div>
+        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="../pages/servicios.html">Servicios</a>
+        <a href="../pages/planes.html">Planes</a>
+        <a href="../pages/cobertura.html">Cobertura</a>
+        <a href="../pages/nosotros.html">Quienes somos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="../pages/avisolegal.html">Aviso legal</a>
+        <a href="../pages/privacidad.html">Política de privacidad</a>
+        <a href="../pages/cookies.html">Cookies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
+        <span class="footer-text">L-V · 9:00–18:00h</span>
+        <span class="footer-text">+34 634 317 344</span>
+        <span class="footer-text">+34 613 638 697</span>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="../cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (!cookieConsent) {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

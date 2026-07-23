@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>InByte | Blog de Tecnología</title>
+
+  <meta name="description" content="Consejos de ciberseguridad, mantenimiento informático, guías y novedades para la tecnología de su empresa.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#12385a">
+  <meta name="color-scheme" content="light">
+
+  <link rel="canonical" href="https://inbyte.es/pages/blog.html">
+  <link rel="icon" type="image/png" href="../image/favicon.ico">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="InByte">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:title" content="Blog de Tecnología">
+  <meta property="og:description" content="Artículos, guías y consejos sobre seguridad informática, redes y soporte técnico empresarial.">
+  <meta property="og:url" content="https://inbyte.es/pages/blog.html">
+  <meta property="og:image" content="https://inbyte.es/image/icon.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog de Tecnología">
+  <meta name="twitter:description" content="Novedades y artículos sobre ciberseguridad y soporte IT.">
+  <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* Estilos de la cuadrícula de artículos */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 36px;
+    }
+
+    .blog-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(18, 56, 90, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(18, 56, 90, 0.08);
+    }
+
+    .blog-card-img {
+      width: 100%;
+      height: 200px;
+      background: #e2e8f0;
+      object-fit: cover;
+    }
+
+    .blog-card-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .blog-tag {
+      align-self: flex-start;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #00a8e8;
+      background: rgba(0, 168, 232, 0.1);
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .blog-card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #12385a;
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .blog-card-title a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .blog-card-title a:hover {
+      color: #00a8e8;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 16px;
+    }
+
+    /* Paginación */
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin: 56px 0 32px;
+    }
+
+    .pagination a, .pagination span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #12385a;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .pagination a:hover {
+      border-color: #00a8e8;
+      color: #00a8e8;
+    }
+
+    .pagination .active {
+      background: #12385a;
+      color: #ffffff;
+      border-color: #12385a;
+    }
+
+    .pagination .disabled {
+      color: #cbd5e1;
+      border-color: #f1f5f9;
+      cursor: not-allowed;
+    }
+
+    /* Banner de Cookies */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #12385a;
+      color: #ffffff;
+      padding: 20px 24px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      z-index: 10000;
+      display: none;
+    }
+    .cookie-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .cookie-content p {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255,255,255,0.9);
+      margin: 0;
+    }
+    .cookie-content a {
+      color: #00a8e8;
+      text-decoration: underline;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .btn-cookie-accept {
+      background: #00a8e8;
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+    .btn-cookie-reject {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .cookie-buttons {
+        width: 100%;
+      }
+      .cookie-buttons button {
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="nav">
+      <a href="../index.html" class="brand" aria-label="Ir al inicio">
+        <img class="icon" src="../image/icon.png" alt="InByte icono">
+        <img class="text" src="../image/text.png" alt="InByte Soluciones Tecnológicas">
+      </a>
+      <nav class="navlinks">
+        <a href="planes.html">Planes</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="nosotros.html">Quiénes somos</a>
+      </nav>
+      <a class="btn btn-primary" href="contacto.html">Contactar</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 20px; text-align: left;">
+      <div class="wrap" style="text-align: left; margin: 0 auto; max-width: 1200px;">
+        <p class="eyebrow">Blog & Novedades</p>
+        <h1 style="text-align: left;">Consejos y guías sobre <span class="accent">tecnología empresarial</span></h1>
+        <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
+          Manténgase al día sobre tecnología, ciberseguridad, mantenimiento de sistemas informáticos y las mejores prácticas para proteger su empresa.
+        </p>
+
+        <div class="blog-grid">
+            <article class="blog-card">
+                <img src="../pages/blog/image/imap.png" alt="Servidor de correo IMAP" class="blog-card-img">
+                <div class="blog-card-content">
+                    <span class="blog-tag">Correo & Servidores</span>
+                    <h2 class="blog-card-title">
+                    <a href="blog/imap.html">¿Qué es IMAP y cómo funciona?</a>
+                    </h2>
+                    <p class="blog-card-excerpt">
+                    Descubra qué es el protocolo IMAP, cómo funciona la sincronización en tiempo real y por qué es la mejor opción para el correo de su empresa.
+                    </p>
+                    <div class="blog-card-meta">
+                    <span>22 Jul 2026</span>
+                    <span>Lectura: 4 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="blog-card">
+              <img src="../pages/blog/image/pop3.png" alt="Servidor de correo POP3" class="blog-card-img">
+              <div class="blog-card-content">
+                <span class="blog-tag">Correo & Servidores</span>
+                <h2 class="blog-card-title">
+                  <a href="blog/pop3.html">¿Qué es POP3 y para qué se usa?</a>
+                </h2>
+                <p class="blog-card-excerpt">
+                  Descubra cómo funciona el protocolo POP3, sus ventajas en la descarga local de correo y cuándo conviene elegirlo frente a IMAP en su empresa.
+                </p>
+                <div class="blog-card-meta">
+                  <span>22 Jul 2026</span>
+                  <span>Lectura: 5 min</span>
+                </div>
+              </div>
+            </article>
+
+
+        </div>
+
+        <!--
+        <div class="pagination">
+          <span class="disabled">&laquo; Anterior</span>
+          <span class="active">1</span>
+          <a href="#">2</a>
+          <a href="#">Siguiente &raquo;</a>
+        </div>
+        -->
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-top">
+          <img class="icon" src="../image/icon.png" alt="Inbyte">
+          <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
+        </div>
+        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <a href="servicios.html">Servicios</a>
+        <a href="planes.html">Planes</a>
+        <a href="cobertura.html">Cobertura</a>
+        <a href="nosotros.html">Quienes somos</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Empresa</h4>
+        <a href="avisolegal.html">Aviso legal</a>
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
+        <span class="footer-text">L-V · 9:00–18:00h</span>
+        <span class="footer-text">+34 634 317 344</span>
+        <span class="footer-text">+34 613 638 697</span>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
+    </div>
+  </footer>
+
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (!cookieConsent) {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        banner.style.display = 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>

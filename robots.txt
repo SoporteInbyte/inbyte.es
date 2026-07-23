@@ -1,0 +1,9 @@
+# Permite el acceso a todos los buscadores principales
+User-agent: *
+Allow: /
+
+# Evita la indexación de la plantilla base
+Disallow: /pages/blog/plantilla.html
+
+# Ubicación del Mapa del Sitio (Sitemap)
+Sitemap: https://inbyte.es/sitemap.xml
