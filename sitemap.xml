@@ -3,14 +3,14 @@
 
   <url>
     <loc>https://inbyte.es/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
     <loc>https://inbyte.es/pages/planes.html</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -53,6 +53,13 @@
   <url>
     <loc>https://inbyte.es/pages/blog/imap.html</loc>
     <lastmod>2026-07-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://inbyte.es/pages/blog/pop3.html</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
