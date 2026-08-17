@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,18 +14,20 @@
   <meta name="color-scheme" content="light">
 
   <link rel="canonical" href="https://inbyte.es/pages/avisolegal.html">
-  <link rel="icon" type="image/png" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="512x512" href="/image/icon.png">
+  <link rel="apple-touch-icon" href="/image/icon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="InByte">
   <meta property="og:locale" content="es_ES">
-  <meta property="og:title" content="Aviso Legal">
+  <meta property="og:title" content="InByte | Aviso Legal">
   <meta property="og:description" content="Información legal y condiciones generales de uso del sitio web de InByte.">
   <meta property="og:url" content="https://inbyte.es/pages/avisolegal.html">
   <meta property="og:image" content="https://inbyte.es/image/icon.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aviso Legal">
+  <meta name="twitter:title" content="InByte | Aviso Legal">
   <meta name="twitter:description" content="Información legal y condiciones de uso del sitio web de InByte.">
   <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
 
@@ -177,22 +181,7 @@
 
 <body id="top">
 
-  <header>
-    <div class="nav">
-      <a href="../index.html" class="brand" aria-label="Ir al inicio">
-        <img class="icon" src="../image/icon.png" alt="InByte icono">
-        <img class="text" src="../image/text.png" alt="InByte Soluciones Tecnológicas">
-      </a>
-      <nav class="navlinks">
-        <a href="planes.html">Planes</a>
-        <a href="servicios.html">Servicios</a>
-        <a href="cobertura.html">Cobertura</a>
-        <a href="blog.html">Blog</a>
-        <a href="nosotros.html">Quiénes somos</a>
-      </nav>
-      <a class="btn btn-primary" href="contacto.html">Contactar</a>
-    </div>
-  </header>
+  {% include header.html %}
 
   <main>
     <div class="legal-content">
@@ -266,44 +255,7 @@
     </div>
   </main>
 
-  <footer>
-    <div class="wrap footer-grid">
-      <div class="footer-brand">
-        <div class="footer-brand-top">
-          <img class="icon" src="../image/icon.png" alt="Inbyte">
-          <img class="text" src="../image/text.png" alt="Inbyte Soluciones Tecnológicas">
-        </div>
-        <p class="footer-tagline">El departamento de IT externo para su empresa.</p>
-      </div>
-
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <a href="servicios.html">Servicios</a>
-        <a href="planes.html">Planes</a>
-        <a href="cobertura.html">Cobertura</a>
-        <a href="nosotros.html">Quienes somos</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Empresa</h4>
-        <a href="avisolegal.html">Aviso legal</a>
-        <a href="privacidad.html">Política de privacidad</a>
-        <a href="cookies.html">Cookies</a>
-      </div>
-
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a>
-        <span class="footer-text">L-V · 9:00–18:00h</span>
-        <span class="footer-text">+34 634 317 344</span>
-        <span class="footer-text">+34 613 638 697</span>
-      </div>
-    </div>
-
-    <div class="wrap footer-bottom">
-      <div class="footer-legal">© 2026 InByte. Todos los derechos reservados</div>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <div id="cookie-banner" class="cookie-banner">
     <div class="cookie-content">

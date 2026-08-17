@@ -5,5 +5,8 @@ Allow: /
 # Evita la indexación de la plantilla base
 Disallow: /pages/blog/plantilla.html
 
+# Rutas fantasma que Google ha inventado a partir de enlaces rotos
+Disallow: /pages/pages/
+
 # Ubicación del Mapa del Sitio (Sitemap)
 Sitemap: https://inbyte.es/sitemap.xml
