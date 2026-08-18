@@ -1,16 +1,43 @@
 <header>
   <div class="nav">
     <a href="/" class="brand" aria-label="Ir al inicio">
-      <img class="icon" src="/image/icon.png" alt="Inbyte icono">
-      <img class="text" src="/image/text.png" alt="Inbyte Soluciones Tecnológicas">
+      <img class="icon" src="/image/icon.png" alt="Inbyte icono" decoding="async">
+      <img class="text" src="/image/text.png" alt="Inbyte Soluciones Tecnológicas" decoding="async">
     </a>
-    <nav class="navlinks">
+    <nav class="navlinks" id="navlinks" aria-label="Navegación principal">
       <a href="/pages/planes.html">Planes</a>
       <a href="/pages/servicios.html">Servicios</a>
       <a href="/pages/cobertura.html">Cobertura</a>
       <a href="/pages/blog.html">Blog</a>
       <a href="/pages/nosotros.html">Quiénes somos</a>
     </nav>
-    <a class="btn btn-primary" href="/pages/contacto.html">Contactar</a>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="/pages/contacto.html">Contactar</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navlinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </div>
 </header>
+<script>
+  (function () {
+    var toggle = document.getElementById('nav-toggle');
+    var navlinks = document.getElementById('navlinks');
+    if (!toggle || !navlinks) return;
+    function closeMenu() {
+      navlinks.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Abrir menú');
+    }
+    toggle.addEventListener('click', function () {
+      var open = navlinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    });
+    navlinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+  })();
+</script>

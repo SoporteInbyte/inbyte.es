@@ -8,7 +8,7 @@
 
   <title>InByte | Política de Privacidad</title>
 
-  <meta name="description" content="Política de privacidad de InByte: información sobre el tratamiento de sus datos personales, finalidades y ejercicio de derechos.">
+  <meta name="description" content="Política de privacidad de InByte: qué datos tratamos, con qué finalidad y cómo ejercer tus derechos como interesado.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#12385a">
   <meta name="color-scheme" content="light">
@@ -24,12 +24,14 @@
   <meta property="og:title" content="InByte | Política de Privacidad">
   <meta property="og:description" content="Información transparente sobre cómo tratamos sus datos personales en InByte.">
   <meta property="og:url" content="https://inbyte.es/pages/privacidad.html">
-  <meta property="og:image" content="https://inbyte.es/image/icon.png">
+  <meta property="og:image" content="https://inbyte.es/image/og-image.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="InByte | Política de Privacidad">
   <meta name="twitter:description" content="Información transparente sobre el tratamiento de datos personales en InByte.">
-  <meta name="twitter:image" content="https://inbyte.es/image/icon.png">
+  <meta name="twitter:image" content="https://inbyte.es/image/og-image.webp">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
@@ -38,6 +40,15 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted'
+    });
+
     gtag('config', 'G-LENKW38NL8');
   </script>
 
@@ -45,7 +56,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css?v=20260818">
 
   <style>
     .legal-content {
@@ -126,12 +137,19 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: #12385a;
+      background: linear-gradient(135deg, #143c61, #0d2a47);
       color: #ffffff;
       padding: 20px 24px;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 -8px 40px rgba(0,0,0,0.35);
+      border-top: 3px solid #00a8e8;
+      border-radius: 16px 16px 0 0;
       z-index: 10000;
       display: none;
+      animation: cookieSlideUp 0.35s ease-out;
+    }
+    @keyframes cookieSlideUp {
+      from { transform: translateY(100%); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
     }
     .cookie-content {
       max-width: 1200px;
@@ -144,12 +162,16 @@
     .cookie-content p {
       font-size: 0.88rem;
       line-height: 1.5;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.92);
       margin: 0;
     }
     .cookie-content a {
       color: #00a8e8;
       text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+    .cookie-content a:hover {
+      color: #4cc9ff;
     }
     .cookie-buttons {
       display: flex;
@@ -157,24 +179,38 @@
       flex-shrink: 0;
     }
     .btn-cookie-accept {
-      background: #00a8e8;
+      background: linear-gradient(135deg, #00a8e8, #0095cc);
       color: #ffffff;
       border: none;
-      padding: 8px 16px;
-      border-radius: 6px;
+      padding: 10px 22px;
+      border-radius: 999px;
       font-weight: 600;
       cursor: pointer;
       font-size: 0.85rem;
+      box-shadow: 0 4px 14px rgba(0,168,232,0.35);
+      transition: all 0.25s ease;
+    }
+    .btn-cookie-accept:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,168,232,0.45);
     }
     .btn-cookie-reject {
       background: transparent;
       color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.4);
-      padding: 8px 16px;
-      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.45);
+      padding: 10px 22px;
+      border-radius: 999px;
       font-weight: 600;
       cursor: pointer;
       font-size: 0.85rem;
+      transition: all 0.25s ease;
+    }
+    .btn-cookie-reject:hover {
+      background: rgba(255,255,255,0.08);
+    }
+    .cookie-banner button:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
     }
 
     @media (max-width: 768px) {
@@ -191,6 +227,16 @@
       }
     }
   </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://inbyte.es/" },
+      { "@type": "ListItem", "position": 2, "name": "Política de Privacidad", "item": "https://inbyte.es/pages/privacidad.html" }
+  ]
+}
+</script>
 </head>
 
 <body id="top">
@@ -292,8 +338,8 @@
         Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
       </p>
       <div class="cookie-buttons">
-        <button id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
-        <button id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+        <button type="button" id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button type="button" id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
       </div>
     </div>
   </div>
@@ -306,17 +352,38 @@
 
       const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
 
-      if (!cookieConsent) {
+      if (cookieConsent === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      } else if (cookieConsent === 'rejected') {
+        // sin consentimiento: se mantiene denied
+      } else {
         banner.style.display = 'block';
       }
 
       btnAccept.addEventListener('click', function() {
         localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
         banner.style.display = 'none';
       });
 
       btnReject.addEventListener('click', function() {
         localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
         banner.style.display = 'none';
       });
     });
