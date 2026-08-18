@@ -139,7 +139,7 @@
     /* Grid de Incluye / Alcance */
     .service-grid-detail {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
       margin-top: 16px;
     }
@@ -396,6 +396,9 @@
     }
 
     @media (max-width: 768px) {
+      .service-grid-detail {
+        grid-template-columns: 1fr;
+      }
       .cookie-content {
         flex-direction: column;
         align-items: flex-start;
