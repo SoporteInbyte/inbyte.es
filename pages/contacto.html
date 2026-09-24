@@ -334,6 +334,7 @@
             </div>
           </div>
 
+         
           <div class="contact-form">
             <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
               <input type="hidden" name="access_key" value="6471266f-d6d1-44f9-8b00-eb9d186c09cc">
@@ -384,6 +385,56 @@
             </form>
           </div>
         </div>
+        
+         <!--
+        <div class="contact-form">
+          <form id="contact-form">
+
+            <div class="form-group">
+              <label for="nombre">Nombre completo *</label>
+              <input type="text" id="nombre" name="nombre" required placeholder="Ej. Ana Martinez">
+            </div>
+
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input type="text" id="empresa" name="empresa" placeholder="Ej. Mi Empresa S.L.">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo electronico *</label>
+              <input type="email" id="email" name="email" required placeholder="nombre@empresa.com">
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Telefono de contacto</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000">
+            </div>
+
+            <div class="form-group">
+              <label for="asunto">Motivo de consulta</label>
+              <select id="asunto" name="asunto">
+                <option value="Informacion sobre planes mensuales">Informacion sobre planes mensuales</option>
+                <option value="Soporte o intervencion puntual">Soporte o intervencion puntual</option>
+                <option value="Consulta sobre cobertura / desplazamiento">Consulta sobre cobertura / desplazamiento</option>
+                <option value="Otro motivo">Otro motivo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required placeholder="Cuentanos que necesitas..."></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="privacidad" name="privacidad" required>
+              <label for="privacidad">He leido y acepto la <a href="privacidad.html" target="_blank">Politica de Privacidad</a>.</label>
+            </div>
+
+            <button type="submit" class="btn-submit-form">Enviar mensaje</button>
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+        -->
 
       </div>
     </section>
@@ -497,6 +548,57 @@
       });
     });
   </script>
+
+  <!-- Script para formulario -->
+  <!--
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      var form = e.target;
+      var status = document.getElementById('form-status');
+      var btn = form.querySelector('.btn-submit-form');
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+      status.textContent = '';
+
+      var data = {
+        nombre: form.nombre.value,
+        email: form.email.value,
+        asunto: form.asunto.value,
+        mensaje: form.mensaje.value
+      };
+      if (form.empresa.value) data.empresa = form.empresa.value;
+      if (form.telefono.value) data.telefono = form.telefono.value;
+
+      try {
+        var res = await fetch('/api/v1/tickets', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': '339b5ce70e0cf7d2c87a714a04e3396ba5577489649710a445061515156c7f51'
+          },
+          body: JSON.stringify(data)
+        });
+
+        var result = await res.json();
+
+        if (result.success) {
+          status.innerHTML = '<p style="color:green">Ticket #' + result.ticket_number + ' creado correctamente. Te contactaremos pronto.</p>';
+          form.reset();
+        } else {
+          status.innerHTML = '<p style="color:red">Error: ' + (result.message || 'No se pudo crear el ticket') + '</p>';
+        }
+      } catch (err) {
+        status.innerHTML = '<p style="color:red">Error de conexion. Intentalo de nuevo.</p>';
+      }
+
+      btn.disabled = false;
+      btn.textContent = 'Enviar mensaje';
+    });
+  </script>
+-->
 
 </body>
 </html>
