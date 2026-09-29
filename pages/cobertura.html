@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InByte | Nuestra Cobertura de Soporte IT</title>
-  <meta name="description" content="Soporte IT remoto ilimitado a nivel nacional y asistencia presencial en Murcia para empresas. Así cubrimos tu departamento de IT.">
+  <title>Cobertura soporte informático Murcia + remoto España | InByte</title>
+  <meta name="description" content="Soporte presencial en Murcia (capital, Cartagena, Molina y toda la Región) y remoto ilimitado en España. Consulta tarifas.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#12385a">
   <meta name="color-scheme" content="light">
@@ -30,23 +30,7 @@
   <meta name="twitter:description" content="Cobertura técnica y alcance de nuestros servicios de soporte IT.">
   <meta name="twitter:image" content="https://inbyte.es/image/og-image.webp">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'functionality_storage': 'granted',
-      'security_storage': 'granted'
-    });
-
-    gtag('config', 'G-LENKW38NL8');
-  </script>
+  {% include analytics.html %}
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,11 +45,11 @@
     "serviceType": "Cobertura de Soporte IT",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "InByte",
+      "name": "InByte Soluciones Tecnológicas",
       "url": "https://inbyte.es",
-      "image": "https://inbyte.es/image/icon.png",
+      "image": "https://inbyte.es/image/og-image.webp",
       "logo": "https://inbyte.es/image/icon.png",
-      "telephone": "+34634317344",
+      "telephone": "+34622923525",
       "email": "soporte@inbyte.es",
       "priceRange": "$$",
       "address": {
@@ -434,11 +418,11 @@
     <section class="hero" style="padding-bottom: 20px; text-align: left;">
         <div class="wrap" style="text-align: left; margin: 0 auto; max-width: 1200px;">
           <p class="eyebrow">
-            Modalidades y Alcance del Servicio
+            Cobertura
           </p>
           <h1 style="text-align: left;">Cobertura de <span class="accent">soporte IT</span></h1>
           <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
-            Prestamos soporte remoto ilimitado sin barreras geográficas y asistencia presencial garantizada en la Región de Murcia.
+            Empresa de servicios sin oficina abierta al público: te visitamos en la Región de Murcia y te atendemos en remoto en toda España. Soporte remoto ilimitado + asistencia presencial garantizada.
           </p>
         </div>
       </section>
@@ -597,17 +581,7 @@
 
   {% include footer.html %}
 
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <p>
-        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
-      </p>
-      <div class="cookie-buttons">
-        <button type="button" id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
-        <button type="button" id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
-      </div>
-    </div>
-  </div>
+  {% include cookie-banner.html %}
 
   <script>
     // Intersection Observer para animaciones .reveal
@@ -618,49 +592,7 @@
     }, {threshold:0.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Lógica del aviso de cookies
-    document.addEventListener('DOMContentLoaded', function() {
-      const banner = document.getElementById('cookie-banner');
-      const btnAccept = document.getElementById('btn-cookie-accept');
-      const btnReject = document.getElementById('btn-cookie-reject');
 
-      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
-
-      if (cookieConsent === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      } else if (cookieConsent === 'rejected') {
-        // sin consentimiento: se mantiene denied
-      } else {
-        banner.style.display = 'block';
-      }
-
-      btnAccept.addEventListener('click', function() {
-        localStorage.setItem('inbyte_cookie_consent', 'accepted');
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-        banner.style.display = 'none';
-      });
-
-      btnReject.addEventListener('click', function() {
-        localStorage.setItem('inbyte_cookie_consent', 'rejected');
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
-        banner.style.display = 'none';
-      });
-    });
   </script>
 
 </body>

@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>InByte | Nuestros Planes para Empresas</title>
-  <meta name="description" content="Compara los planes de mantenimiento e infraestructura IT de InByte con precios claros y elige el plan ideal para tu empresa.">
+  <title>Planes mantenimiento informático empresas Murcia | Precios | InByte</title>
+  <meta name="description" content="Planes de mantenimiento informático en Murcia: Esencial, Profesional y Corporativo. Remoto ilimitado y 24/7. Sin permanencia.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#12385a">
   <meta name="color-scheme" content="light">
@@ -30,24 +30,7 @@
   <meta name="twitter:description" content="Cobertura técnica y alcance de nuestros servicios de soporte IT.">
   <meta name="twitter:image" content="https://inbyte.es/image/og-image.webp">
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
-      'analytics_storage': 'denied',
-      'functionality_storage': 'granted',
-      'security_storage': 'granted'
-    });
-
-    gtag('config', 'G-LENKW38NL8');
-  </script>
+  {% include analytics.html %}
 
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -313,6 +296,12 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"¿Dónde ofrecéis soporte?","acceptedAnswer":{"@type":"Answer","text":"En la Región de Murcia: Murcia, Cartagena, Molina de Segura, Alcantarilla y resto de municipios. En el resto de España, en remoto."}},
+    {"@type":"Question","name":"¿En cuánto respondéis?","acceptedAnswer":{"@type":"Answer","text":"En menos de 24 horas laborables, horario L-V 9:00-18:00."}}
+  ]}
+  </script>
 </head>
 
 <body id="top">
@@ -327,7 +316,7 @@
         </p>
         <h1 style="text-align: left;">Nuestros planes para las <span class="accent">empresas</span></h1>
         <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
-          Consulte de forma transparente todas las coberturas, servicios y características incluidas en cada nivel de mantenimiento.
+          Externaliza tu departamento IT en Murcia con cuota mensual sin permanencia: soporte remoto ilimitado, horas presenciales y monitorización 24/7. Remoto en toda España.
         </p>
       </div>
     </section>
@@ -497,6 +486,19 @@
       </div>
     </section>
 
+        <section id="faq-planes" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Dudas</p>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>¿Dónde ofrecéis soporte?</summary><p>En la Región de Murcia: Murcia, Cartagena, Molina de Segura, Alcantarilla y resto de municipios. En el resto de España, en remoto.</p></details>
+          <details><summary>¿En cuánto respondéis?</summary><p>En menos de 24 horas laborables, horario L-V 9:00-18:00.</p></details>
+        </div>
+      </div>
+    </section>
+
     <section id="contacto">
       <div class="wrap">
         <div class="contact reveal">
@@ -527,17 +529,7 @@
 
   {% include footer.html %}
 
-  <div id="cookie-banner" class="cookie-banner">
-    <div class="cookie-content">
-      <p>
-        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
-      </p>
-      <div class="cookie-buttons">
-        <button type="button" id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
-        <button type="button" id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
-      </div>
-    </div>
-  </div>
+  {% include cookie-banner.html %}
 
   <script>
     const io = new IntersectionObserver((entries)=>{
@@ -547,49 +539,7 @@
     }, {threshold:0.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Lógica del aviso de cookies
-    document.addEventListener('DOMContentLoaded', function() {
-      const banner = document.getElementById('cookie-banner');
-      const btnAccept = document.getElementById('btn-cookie-accept');
-      const btnReject = document.getElementById('btn-cookie-reject');
 
-      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
-
-      if (cookieConsent === 'accepted') {
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-      } else if (cookieConsent === 'rejected') {
-        // sin consentimiento: se mantiene denied
-      } else {
-        banner.style.display = 'block';
-      }
-
-      btnAccept.addEventListener('click', function() {
-        localStorage.setItem('inbyte_cookie_consent', 'accepted');
-        gtag('consent', 'update', {
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted',
-          'analytics_storage': 'granted'
-        });
-        banner.style.display = 'none';
-      });
-
-      btnReject.addEventListener('click', function() {
-        localStorage.setItem('inbyte_cookie_consent', 'rejected');
-        gtag('consent', 'update', {
-          'ad_storage': 'denied',
-          'ad_user_data': 'denied',
-          'ad_personalization': 'denied',
-          'analytics_storage': 'denied'
-        });
-        banner.style.display = 'none';
-      });
-    });
   </script>
 
 </body>
