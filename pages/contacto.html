@@ -5,8 +5,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto soporte informático Murcia | Presupuesto | InByte</title>
-  <meta name="description" content="Pide presupuesto de soporte informático para empresas en Murcia y remoto en España. Diagnóstico gratuito, respuesta en 24h laborables. Email y teléfono.">
+  <title>InByte | Contacto y Asistencia</title>
+  <meta name="description" content="Contacta con InByte: soporte IT remoto y presencial en Murcia, respuesta rápida y presupuesto sin compromiso para tu empresa.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#12385a">
   <meta name="color-scheme" content="light">
@@ -30,7 +30,24 @@
   <meta name="twitter:description" content="Formulario de contacto y datos de asistencia técnica.">
   <meta name="twitter:image" content="https://inbyte.es/image/og-image.webp">
 
-  {% include analytics.html %}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted'
+    });
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -281,12 +298,6 @@
   ]
 }
 </script>
-<script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"¿Dónde ofrecéis soporte presencial?","acceptedAnswer":{"@type":"Answer","text":"En la Región de Murcia: Murcia, Cartagena, Molina de Segura, Alcantarilla y resto de municipios. En el resto de España, en remoto."}},
-    {"@type":"Question","name":"¿En cuánto respondéis?","acceptedAnswer":{"@type":"Answer","text":"En menos de 24 horas laborables, horario L-V 9:00-18:00."}}
-  ]}
-  </script>
 </head>
 
 <body id="top">
@@ -296,10 +307,10 @@
   <main>
     <section class="hero" style="padding-bottom: 20px; text-align: left;">
       <div class="wrap" style="text-align: left; margin: 0 auto; max-width: 1200px;">
-        <p class="eyebrow">Contacto</p>
+        <p class="eyebrow">Atención Personalizada</p>
         <h1 style="text-align: left;">Habla con un <span class="accent">técnico especializado</span></h1>
         <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
-          Diagnóstico gratuito de tu departamento IT: mantenimiento informático, servidores y redes. Presencial en Murcia, remoto en toda España.
+          Resuelve tus dudas sobre mantenimiento informático, solicita un análisis para tu empresa o pide presupuesto personalizado sin compromiso.
         </p>
 
         <div class="contacto-layout">
@@ -307,7 +318,7 @@
             <div class="info-box">
               <h3>Atención Directa</h3>
               <p>Email: <a href="mailto:soporte@inbyte.es">soporte@inbyte.es</a></p>
-              <p>Teléfono: <a href="tel:+34622923525">+34 622 92 35 25</a></p>
+              <p>Teléfono: <a href="tel:+34634317344">+34 622 92 35 25</a></p>
               <p>Teléfono secundario: <a href="tel:+34613638697">+34 613 63 86 97</a></p>
             </div>
 
@@ -376,26 +387,66 @@
 
       </div>
     </section>
-    <section id="faq-contacto" style="padding-top:0;padding-bottom:0;">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">Dudas</p>
-          <h2>Preguntas frecuentes</h2>
-        </div>
-        <div class="faq-list">
-          <details><summary>¿Dónde ofrecéis soporte presencial?</summary><p>En la Región de Murcia: Murcia, Cartagena, Molina de Segura, Alcantarilla y resto de municipios. En el resto de España, en remoto.</p></details>
-          <details><summary>¿En cuánto respondéis?</summary><p>En menos de 24 horas laborables, horario L-V 9:00-18:00.</p></details>
-        </div>
-      </div>
-    </section>
-
   </main>
 
   {% include footer.html %}
 
-  {% include cookie-banner.html %}
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button type="button" id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button type="button" id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
 
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (cookieConsent === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      } else if (cookieConsent === 'rejected') {
+        // sin consentimiento: se mantiene denied
+      } else {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+        banner.style.display = 'none';
+      });
+    });
+  </script>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {

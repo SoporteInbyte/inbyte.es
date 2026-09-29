@@ -6,9 +6,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Quiénes somos: departamento IT externalizado Murcia | InByte</title>
+  <title>InByte | Quiénes Somos</title>
 
-  <meta name="description" content="InByte: externalizamos el departamento IT de pymes en Murcia con soporte presencial y remoto en España. Cercanía, transparencia y enfoque proactivo 24/7.">
+  <meta name="description" content="Conoce a InByte: el equipo que externaliza el departamento de IT de tu empresa. Qué hacemos, cómo trabajamos y por qué elegirnos.">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#12385a">
   <meta name="color-scheme" content="light">
@@ -33,7 +33,24 @@
   <meta name="twitter:description" content="Conozca a InByte: quiénes somos y cómo ayudamos a las empresas.">
   <meta name="twitter:image" content="https://inbyte.es/image/og-image.webp">
 
-  {% include analytics.html %}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted'
+    });
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,18 +62,15 @@
   {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
-    "name": "InByte Soluciones Tecnológicas",
+    "name": "InByte",
     "url": "https://inbyte.es",
     "logo": "https://inbyte.es/image/icon.png",
-    "image": "https://inbyte.es/image/og-image.webp",
-    "description": "Departamento IT externalizado para pymes en Murcia con soporte remoto en toda España.",
+    "image": "https://inbyte.es/image/icon.png",
+    "description": "Departamento de IT externo para pequeñas y medianas empresas.",
     "email": "soporte@inbyte.es",
-    "telephone": "+34622923525",
+    "telephone": "+34 634 317 344",
     "priceRange": "$$",
-    "areaServed": [
-      { "@type": "AdministrativeArea", "name": "Región de Murcia" },
-      { "@type": "Country", "name": "España" }
-    ],
+    "areaServed": "Región de Murcia",
     "address": {
       "@type": "PostalAddress",
       "addressRegion": "Región de Murcia",
@@ -322,7 +336,7 @@
         <p class="eyebrow">Quiénes somos</p>
         <h1 style="text-align: left;">El equipo que cuida su IT <span class="accent">como si fuera propia</span></h1>
         <p class="lead" style="text-align: left; max-width: 720px; margin: 12px 0 0 0; color: #475569;">
-          Soporte informático cercano con presencia en Murcia y remoto en España: combinamos atención inmediata con monitorización proactiva 24/7.
+          Nacimos con la misión de proporcionar a las empresas un departamento de IT cercano, eficiente y transparente, combinando soporte remoto inmediato con presencia técnica.
         </p>
 
         <div class="about-story">
@@ -413,9 +427,62 @@
 
   {% include footer.html %}
 
-  {% include cookie-banner.html %}
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button type="button" id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button type="button" id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
 
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (cookieConsent === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      } else if (cookieConsent === 'rejected') {
+        // sin consentimiento: se mantiene denied
+      } else {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+        banner.style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>

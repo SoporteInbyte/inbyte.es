@@ -34,7 +34,23 @@
   <meta name="twitter:image" content="https://inbyte.es/image/og-image.webp">
 
   <!-- Google tag (gtag.js) -->
-  {% include analytics.html %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LENKW38NL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'security_storage': 'granted'
+    });
+
+    gtag('config', 'G-LENKW38NL8');
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -342,9 +358,62 @@
 
   {% include footer.html %}
 
-  {% include cookie-banner.html %}
+  <div id="cookie-banner" class="cookie-banner">
+    <div class="cookie-content">
+      <p>
+        Utilizamos cookies propias y de terceros para medir el uso de la web y mejorar nuestro servicio. Puedes aceptarlas, rechazarlas o consultar los detalles en nuestra <a href="cookies.html">Política de Cookies</a>.
+      </p>
+      <div class="cookie-buttons">
+        <button type="button" id="btn-cookie-accept" class="btn-cookie-accept">Aceptar todas</button>
+        <button type="button" id="btn-cookie-reject" class="btn-cookie-reject">Rechazar</button>
+      </div>
+    </div>
+  </div>
 
-  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const banner = document.getElementById('cookie-banner');
+      const btnAccept = document.getElementById('btn-cookie-accept');
+      const btnReject = document.getElementById('btn-cookie-reject');
+
+      const cookieConsent = localStorage.getItem('inbyte_cookie_consent');
+
+      if (cookieConsent === 'accepted') {
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+      } else if (cookieConsent === 'rejected') {
+        // sin consentimiento: se mantiene denied
+      } else {
+        banner.style.display = 'block';
+      }
+
+      btnAccept.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'accepted');
+        gtag('consent', 'update', {
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted',
+          'analytics_storage': 'granted'
+        });
+        banner.style.display = 'none';
+      });
+
+      btnReject.addEventListener('click', function() {
+        localStorage.setItem('inbyte_cookie_consent', 'rejected');
+        gtag('consent', 'update', {
+          'ad_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'analytics_storage': 'denied'
+        });
+        banner.style.display = 'none';
+      });
+    });
+  </script>
 
 </body>
 </html>
